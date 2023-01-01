@@ -26,7 +26,7 @@ local M = {
     { "<leader>st", "<cmd> Telescope live_grep <CR>", desc = "Live Grep" },
     { "<leader>sb", "<cmd> Telescope buffers <CR>", desc = "Find Buffers" },
     { "<leader>sh", "<cmd> Telescope help_tags <CR>", desc = "Help Page" },
-    { "<leader>so", "<cmd> Telescope oldfiles <CR>", desc = "Search Recent" },
+    { "<leader>sr", "<cmd> Telescope oldfiles <CR>", desc = "Search Recent" },
     { "<leader>sk", "<cmd> Telescope keymaps <CR>", desc = "Show Keys" },
   },
 }

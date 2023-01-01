@@ -9,7 +9,8 @@ vim.g.loaded_netrw = 1
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme catppuccin]]
+-- vim.cmd [[ colorscheme tokyonight-night ]]
+vim.cmd [[ colorscheme catppuccin ]]
 
 -- vim.o.clipboard = 'unnamedplus'
 
@@ -44,39 +45,39 @@ vim.opt.timeoutlen = 1000
 vim.opt.signcolumn = "yes"
 
 
--- vim.api.nvim_create_autocmd({ "CursorMoved", "VimEnter", "BufWinEnter" }, {
---   callback = function()
---     local winbar_filetype_exclude = {
---       "help",
---       "startify",
---       "dashboard",
---       "packer",
---       "neo-tree",
---       "neogitstatus",
---       "NvimTree",
---       "Trouble",
---       "alpha",
---       "lir",
---       "Outline",
---       "spectre_panel",
---       "toggleterm",
---       "TelescopePrompt",
---       "prompt",
---     }
+vim.api.nvim_create_autocmd({ "CursorMoved", "VimEnter", "BufWinEnter" }, {
+  callback = function()
+    local winbar_filetype_exclude = {
+      "help",
+      "startify",
+      "dashboard",
+      "packer",
+      "neo-tree",
+      "neogitstatus",
+      "NvimTree",
+      "Trouble",
+      "alpha",
+      "lir",
+      "Outline",
+      "spectre_panel",
+      "toggleterm",
+      "TelescopePrompt",
+      "prompt",
+    }
 
---     if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
---       vim.opt_local.winbar = nil
---       return
---     end
+    if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
+      vim.opt_local.winbar = nil
+      return
+    end
 
---     local win_number = vim.api.nvim_get_current_win()
---     local config = vim.api.nvim_win_get_config(win_number)
+    local win_number = vim.api.nvim_get_current_win()
+    local config = vim.api.nvim_win_get_config(win_number)
 
---     if config.relative == "" then
---       vim.opt_local.winbar = "%{%v:lua.require'custom.user.winbar'.get_winbar()%}"
---     else
---       vim.opt_local.winbar = nil
---     end
---   end,
--- })
---
+    if config.relative == "" then
+      vim.opt_local.winbar = "%{%v:lua.require'user.winbar'.get_winbar()%}"
+    else
+      vim.opt_local.winbar = nil
+    end
+  end,
+})
+

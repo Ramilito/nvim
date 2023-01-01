@@ -1,6 +1,7 @@
 return { "folke/which-key.nvim",
   keys = { "<leader>" },
-  event = "VeryLazy",
+  -- event = "VeryLazy",
+
   config = function()
     require("which-key").setup({
       plugins = {

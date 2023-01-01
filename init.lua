@@ -28,5 +28,5 @@ vim.g.mapleader = " " -- make sure to set `mapleader` before lazy so your mappin
 vim.g.maplocalleader = " "
 
 require("lazy").setup("user.plugins")
-require("user.keymappings")
 require("user.settings")
+require("user.keymappings")

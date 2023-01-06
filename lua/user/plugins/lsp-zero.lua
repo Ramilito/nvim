@@ -31,6 +31,9 @@ local M = {
       ['<C-e>'] = cmp.mapping.abort(),
     })
 
+    local cmp_sources = lsp.defaults.cmp_sources({name = "copilot"})
+    table.insert(cmp_sources, {name = "copilot"})
+
     lsp.setup_nvim_cmp({
       mapping = cmp_mappings
     })
@@ -38,14 +41,7 @@ local M = {
     lsp.setup()
 
     local cmp_config = lsp.defaults.cmp_config({
-      sources = {
-        { name = "copilot", priority = 80 },
-        { name = "luasnip", priority = 100 },
-        { name = "nvim_lsp", priority = 90 },
-        { name = "nvim_lsp_signature_help" },
-        { name = "nvim_lua", priority = 90 },
-        { name = "path", priority = 5 },
-      },
+      sources = cmp_sources,
     })
 
     cmp.setup(cmp_config)

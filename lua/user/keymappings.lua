@@ -17,13 +17,15 @@ vim.api.nvim_set_keymap("n", "<S-TAB>", ":bprevious<CR>", { desc = "Buffer prev"
 
 -- Better window navigation
 vim.api.nvim_set_keymap("n", "<C-Left>", "<c-w><left>", { desc = "Window left", noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-Right>", "<c-w><right>", {desc = "Window right", noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-Up>", "<c-w><up>", {desc = "Window up", noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-Right>", "<c-w><right>", { desc = "Window right", noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-Up>", "<c-w><up>", { desc = "Window up", noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-Down>", "<c-w><down>", { desc = "Window down", noremap = true, silent = true })
 
 -- -- Resize windows
-vim.api.nvim_set_keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", { desc = "Resize left", noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", { desc = "Resize rigth", noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-S-Left>", ":vertical resize -2<CR>",
+  { desc = "Resize left", noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-S-Right>", ":vertical resize +2<CR>",
+  { desc = "Resize rigth", noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-S-Up>", ":resize -2<CR>", { desc = "Resize up", noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-S-Down>", ":resize +2<CR>", { desc = "Resize down", noremap = true, silent = true })
 
@@ -36,7 +38,8 @@ vim.api.nvim_set_keymap("v", "<S-Up>", ":m '<-2<CR>gv=gv", { desc = "Move up", n
 vim.api.nvim_set_keymap("v", "<S-Down>", ":m '>+1<CR>gv=gv", { desc = "Move down", noremap = true, silent = true })
 
 -- vim.api.nvim_set_keymap("n", "<C-p>", ":lua require'telescope'.find_open_buffers()<CR>", { desc = "Find open buffers", noremap = true, silent = true })
-vim.keymap.set('n', '<C-p>', "<cmd> Telescope buffers <CR>", { desc = '[ ] Find existing buffers', noremap = true, silent = true  })
+vim.keymap.set('n', '<C-p>', "<cmd> Telescope buffers <CR>",
+  { desc = '[ ] Find existing buffers', noremap = true, silent = true })
 
 -- Don't overrite yanked text
 vim.api.nvim_set_keymap("v", "<leader>p", "\"_dP", { desc = "Paste", noremap = true, silent = true })
@@ -62,16 +65,21 @@ vim.api.nvim_set_keymap('n', '<ESC>', '<cmd>noh<CR>', { desc = "nohl", noremap =
 vim.api.nvim_set_keymap('n', '<leader>c', '<cmd>Bdelete<CR>', { desc = "Close buffer", noremap = true, silent = true })
 
 -- close all but current buffer
-vim.api.nvim_set_keymap('n', '<leader>C', '<cmd>lua require("user.functions").close_all_but_current()<CR>', { desc = "Close all but current", noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>C', '<cmd>lua require("user.functions").close_all_but_current()<CR>',
+  { desc = "Close all but current", noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ul', '<cmd>Lazy<cr>', { desc = "Lazy", noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>Vexplore<CR>', { desc = "Explorer", noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>/', '<Plug>(comment_toggle_linewise)', { desc = "Comment", noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>/', ':normal gcc<CR>', { desc = "Comment", noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>/', '<Plug>(comment_toggle_linewise_visual)', { desc = "Comment", noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('v', '<leader>f', 'vim.lsp.buf.format(opts)', { desc = "Format", noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>LspZeroFormat<cr>', { desc = "Format", noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<leader>e', '<cmd> NvimTreeToggle <CR>', { desc = "Explorer", noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>e', '<cmd> NvimTreeToggle <CR>',
+  { desc = "Explorer", noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<leader>gu', '<cmd> UndotreeToggle <CR>', { desc = "Explorer", noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gu', '<cmd> UndotreeToggle <CR>',
+  { desc = "Explorer", noremap = true, silent = true })
 -- Git
-vim.api.nvim_set_keymap('n', '<leader>gg', '<cmd>lua require("user.functions").lazygit_toggle()<cr>', { desc = "Lazygit", noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gg', '<cmd>lua require("user.functions").lazygit_toggle()<cr>',
+  { desc = "Lazygit", noremap = true, silent = true })

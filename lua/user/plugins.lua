@@ -1,15 +1,18 @@
 local M = {
   -- {"folke/tokyonight.nvim", lazy = false, priority = 100 },
   -- { "williamboman/mason-lspconfig.nvim", lazy = false },
-  -- { "neovim/nvim-lspconfig", lazy = false },
   "nvim-lua/plenary.nvim",
   {"jose-elias-alvarez/typescript.nvim", lazy = true},
   {"windwp/nvim-spectre", lazy = true},
-  {"mbbill/undotree", lazy = true},
+  {"mbbill/undotree", event = "BufWriteCmd"},
   -- "folke/twilight.nvim",
   { "akinsho/toggleterm.nvim", lazy = true },
   { "famiu/bufdelete.nvim", cmd = "Bdelete" },
-  { "numToStr/Comment.nvim", lazy = true },
+  { "numToStr/Comment.nvim", lazy = false, 
+     config = function()
+        require('Comment').setup()
+     end
+  },
   { "MunifTanjim/nui.nvim", lazy = false },
   { "dstein64/vim-startuptime", cmd = "StartupTime" },
   -- {

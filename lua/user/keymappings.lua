@@ -67,7 +67,8 @@ vim.api.nvim_set_keymap('n', '<leader>ul', '<cmd>Lazy<cr>', { desc = "Lazy", nor
 vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>Vexplore<CR>', { desc = "Explorer", noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>/', '<Plug>(comment_toggle_linewise)', { desc = "Comment", noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('v', '<leader>lf', 'vim.lsp.buf.format(opts)', { desc = "Format", noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>f', 'vim.lsp.buf.format(opts)', { desc = "Format", noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>LspZeroFormat<cr>', { desc = "Format", noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>e', '<cmd> NvimTreeToggle <CR>', { desc = "Explorer", noremap = true, silent = true })
 

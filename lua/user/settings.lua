@@ -34,7 +34,9 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir"
 vim.opt.undofile = true
-
+vim.opt.tabstop = 2
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
 vim.opt.showtabline = 0
 vim.opt.laststatus = 3
 vim.opt.cmdheight = 1

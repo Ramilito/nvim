@@ -1,6 +1,5 @@
 local M = {
   'VonHeikemen/lsp-zero.nvim',
-  -- lazy = true,
   event = "VeryLazy",
   dependencies = {
     -- LSP Support
@@ -23,22 +22,33 @@ local M = {
   },
   config = function()
     local lsp = require('lsp-zero')
-    lsp.preset('recommended')
-
     local cmp = require('cmp')
+
+    lsp.preset('recommended')
 
     local cmp_mappings = lsp.defaults.cmp_mappings({
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
     })
 
-    print(vim.inspect(lsp.defaults.sources))
-
     lsp.setup_nvim_cmp({
       mapping = cmp_mappings
     })
 
     lsp.setup()
+
+    local cmp_config = lsp.defaults.cmp_config({
+      sources = {
+        { name = "copilot", priority = 80 },
+        { name = "luasnip", priority = 100 },
+        { name = "nvim_lsp", priority = 90 },
+        { name = "nvim_lsp_signature_help" },
+        { name = "nvim_lua", priority = 90 },
+        { name = "path", priority = 5 },
+      },
+    })
+
+    cmp.setup(cmp_config)
   end
 }
 return M

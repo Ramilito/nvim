@@ -1,5 +1,5 @@
 return { "folke/which-key.nvim",
-  keys = { "<leader>" },
+  keys = { "<leader>", "g" },
   -- event = "VeryLazy",
 
   config = function()

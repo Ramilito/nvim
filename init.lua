@@ -27,6 +27,9 @@ vim.opt.runtimepath:prepend(lazypath)
 vim.g.mapleader = " " -- make sure to set `mapleader` before lazy so your mappings are correct
 vim.g.maplocalleader = " "
 
+vim.opt.laststatus = 3
+vim.opt.cmdheight = 0
+vim.o.termguicolors = true
 require("lazy").setup("user.plugins")
 require("user.settings")
 require("user.keymappings")

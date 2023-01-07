@@ -8,7 +8,7 @@ vim.o.smartcase = true
 -- vim.g.loaded_netrw = 1
 
 -- Set colorscheme
-vim.o.termguicolors = true
+-- vim.o.termguicolors = true
 -- vim.cmd [[ colorscheme tokyonight-night ]]
 -- vim.cmd [[ colorscheme catppuccin ]]
 
@@ -38,8 +38,6 @@ vim.opt.tabstop = 2
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.showtabline = 0
-vim.opt.laststatus = 3
-vim.opt.cmdheight = 1
 
 vim.opt.scrolloff = 8
 vim.opt.updatetime = 50

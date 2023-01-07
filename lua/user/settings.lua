@@ -4,13 +4,13 @@ vim.o.wrap = false
 
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
 
 -- Set colorscheme
 vim.o.termguicolors = true
 -- vim.cmd [[ colorscheme tokyonight-night ]]
-vim.cmd [[ colorscheme catppuccin ]]
+-- vim.cmd [[ colorscheme catppuccin ]]
 
 -- vim.o.clipboard = 'unnamedplus'
 

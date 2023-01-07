@@ -31,12 +31,17 @@ local M = {
       ['<C-e>'] = cmp.mapping.abort(),
     })
 
-    local cmp_sources = lsp.defaults.cmp_sources({name = "copilot"})
-    table.insert(cmp_sources, {name = "copilot"})
+    local cmp_sources = lsp.defaults.cmp_sources({ name = "copilot" })
+    table.insert(cmp_sources, { name = "copilot" })
 
     lsp.setup_nvim_cmp({
       mapping = cmp_mappings
     })
+
+    lsp.on_attach(function(client, bufnr)
+      require('nvim-navic').attach(client, bufnr)
+    end)
+
 
     lsp.setup()
 

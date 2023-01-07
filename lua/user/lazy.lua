@@ -20,7 +20,6 @@ require("lazy").setup("user.plugins", {
 				"tohtml",
 				"tutor",
 				"zipPlugin",
-				"nvim-treesitter-textobjects",
 			},
 		},
 	},

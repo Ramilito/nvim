@@ -42,7 +42,7 @@ vim.keymap.set('n', '<C-p>', "<cmd> Telescope buffers <CR>",
   { desc = '[ ] Find existing buffers', noremap = true, silent = true })
 
 -- Don't overrite yanked text
-vim.api.nvim_set_keymap("v", "<leader>p", "\"_dP", { desc = "Paste", noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>p", "\"_dp", { desc = "Paste", noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>y", "\"+y", { desc = "Yank", noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<leader>y", "\"+y", { desc = "Yank", noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<leader>d", "\"_d", { desc = "Delete", noremap = true, silent = true })

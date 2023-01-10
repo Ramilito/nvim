@@ -1,15 +1,3 @@
--- vim.api.nvim_create_autocmd("UIEnter", {
---   callback = function()
---     local pid = vim.loop.os_getpid()
---     local ctime = vim.loop.fs_stat("/proc/" .. pid).ctime
---     local start = ctime.sec + ctime.nsec / 1e9
---     local tod = { vim.loop.gettimeofday() }
---     local now = tod[1] + tod[2] / 1e6
---     local startuptime = (now - start) * 1000
---     vim.notify(startuptime .. "ms")
---   end,
--- })
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -23,13 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
--- example using a list of specs with the default options
-vim.g.mapleader = " " -- make sure to set `mapleader` before lazy so your mappings are correct
-vim.g.maplocalleader = " "
-
-vim.opt.laststatus = 3
-vim.opt.cmdheight = 0
-vim.o.termguicolors = true
-require("lazy").setup("user.plugins")
 require("user.settings")
 require("user.keymappings")
+require("user.highlights")
+
+require("user.lazy")

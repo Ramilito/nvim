@@ -54,7 +54,7 @@ return {
           "vhs",
           "vim",
           "vue",
-          "wgsl",
+          -- "wgsl",
           "yaml",
           -- "comment", -- comments are slowing down TS bigtime, so disable for now
           -- "markdown",

@@ -2,7 +2,7 @@ return {
   {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
-    config = {
+    opts = {
       plugins = {
         gitsigns = true,
         tmux = true,

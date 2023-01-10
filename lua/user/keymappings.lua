@@ -83,3 +83,4 @@ vim.api.nvim_set_keymap('n', '<leader>gu', '<cmd> UndotreeToggle <CR>',
 -- Git
 vim.api.nvim_set_keymap('n', '<leader>gg', '<cmd>lua require("user.functions").lazygit_toggle()<cr>',
   { desc = "Lazygit", noremap = true, silent = true })
+
